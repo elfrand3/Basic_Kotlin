@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Dashboard">
+
+    <ImageView
+        android:layout_width="165dp"
+        android:layout_gravity="center"
+        android:layout_height="275dp"
+        android:src="@drawable/unuja" />
+    <TextView
+        android:text="Selamat datang"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="15dp"
+        android:text="Dev Android Mobile"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Universitas Nurul Jadid"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="20dp"
+        android:text="Log out"
+        android:textAllCaps="false"
+        android:id="@+id/back"
+        android:textSize="18dp"
+        android:background="@drawable/button"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/edtnim"
+        android:hint="Masukkan Nim"
+        android:textSize="16dp"
+        android:textColorHint="#7C7B7B"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/editr"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <EditText
+        android:layout_marginTop="15dp"
+        android:id="@+id/edtnama"
+        android:hint="Masukkan Nama"
+        android:textSize="16dp"
+        android:textColorHint="#7C7B7B"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/editr"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Kirim"
+        android:textAllCaps="false"
+        android:id="@+id/btnkirim"
+        android:textSize="18dp"
+        android:background="@drawable/button"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
