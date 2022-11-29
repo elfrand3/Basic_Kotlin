@@ -20,6 +20,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("MissingInflatedId")
 
+    val user = "frand"
+    val pass = "123"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -54,15 +57,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         tw.setOnClickListener{startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/i/flow/login")))}
 
         button.setOnClickListener{
-            if(username.text.isEmpty()){
-                Toast.makeText(this,"Email kosong, Masukkan email anda ! ", Toast.LENGTH_SHORT).show()
-            }else if (password.text.isEmpty()){
-                Toast.makeText(this,"Password kosong, Masukkan password anda ! ", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this," Berhasil ", Toast.LENGTH_SHORT).show()
-//                startActivity(Intent(this@MainActivity, Dashboard::class.java))
+            if(username.getText().toString().equals(user)&&password.getText().toString().equals(pass)){
+                Toast.makeText(applicationContext,"Login Berhasil", Toast.LENGTH_SHORT).show()
+                //                startActivity(Intent(this@MainActivity, Dashboard::class.java))
                 startActivity(Intent(this@MainActivity, ListApp::class.java))
 //                startActivity(Intent(this@MainActivity, fragmentbasic::class.java))
+            }else if (username.text.isEmpty()){
+                Toast.makeText(applicationContext,"Email kosong silahkan masukkan email anda!",
+                    Toast.LENGTH_SHORT).show()
+            }else if (password.text.isEmpty()){
+                Toast.makeText(applicationContext,"password kosong silahkan masukkan password anda!",
+                    Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(applicationContext,"data yang anda masukkan salah", Toast.LENGTH_SHORT).show()
             }
         }
 
