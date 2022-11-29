@@ -1,29 +1,26 @@
 package com.example.belajarandroid
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.RequiresApi
-import com.example.belajarandroid.adapter.AplikasiAdapter
-import com.example.belajarandroid.databinding.ActivityDetailListBinding
+import android.widget.ImageView
+import android.widget.TextView
 
 class DetailList : AppCompatActivity() {
-
-    private val binding : ActivityDetailListBinding by lazy{
-        ActivityDetailListBinding.inflate(layoutInflater)
-    }
-
-    private lateinit var aplikasiAdapter : ListApp
-
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-
-        var image = binding.imageView
-        var title = binding.textView
-        var des = binding.textView2
-        var star = binding.textView3
-
+        setContentView(R.layout.activity_detail_list)
+        
+        val image: ImageView = findViewById(R.id.imageView)
+        val nama : TextView = findViewById(R.id.textView)
+        val des : TextView = findViewById(R.id.textView2)
+        
+        val bundle: Bundle? = intent.extras
+        val img = bundle!!.getInt("image")
+        val nm = bundle.getString("nama")
+        val ds = bundle.getString("des")
+        
+        image.setImageResource(img)
+        nama.text = nm
+        des.text = ds
     }
 }

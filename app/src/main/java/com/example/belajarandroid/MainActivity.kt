@@ -4,6 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -11,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -19,6 +23,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //        menutup mata dan membuka mata
+        iv_mata.setOnTouchListener{ p0, p1 ->
+            when(p1.action){
+                MotionEvent.ACTION_DOWN ->{
+                    password.transformationMethod = HideReturnsTransformationMethod()
+                    iv_mata.setImageResource(R.drawable.ic_baseline_visibility_24)
+                }
+                MotionEvent.ACTION_UP ->{
+                    password.transformationMethod = PasswordTransformationMethod.getInstance()
+                    iv_mata.setImageResource(R.drawable.ic_baseline_visibility_off_24)
+                }
+            }
+            true
+        }
 
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
@@ -42,8 +61,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }else{
                 Toast.makeText(this," Berhasil ", Toast.LENGTH_SHORT).show()
 //                startActivity(Intent(this@MainActivity, Dashboard::class.java))
-//                startActivity(Intent(this@MainActivity, ListApp::class.java))
-                startActivity(Intent(this@MainActivity, fragmentbasic::class.java))
+                startActivity(Intent(this@MainActivity, ListApp::class.java))
+//                startActivity(Intent(this@MainActivity, fragmentbasic::class.java))
             }
         }
 

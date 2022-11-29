@@ -56,20 +56,36 @@
         android:layout_marginLeft="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="Masukkan password"
-        android:textColor="@color/black"
-        android:textSize="16dp"
-        android:padding="10dp"
-        android:id="@+id/password"
-        android:textColorHint="#7C7B7B"
-        android:inputType="textPassword"
-        android:drawableRight="@drawable/ic_baseline_visibility_off_24"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/editr"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:hint="Masukkan password"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:padding="10dp"
+            android:id="@+id/password"
+            android:textColorHint="#7C7B7B"
+            android:inputType="textPassword"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/editr"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <ImageView
+            android:id="@+id/iv_mata"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_baseline_visibility_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
